@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { getToken } from "../utils/getToken";
+import { serverURL } from "../utils/serverURL";
 
 function Profile() {
   const [error, setError] = useState(null);
@@ -16,7 +17,8 @@ function Profile() {
         headers: myHeaders,
       };
 
-      fetch("http://localhost:5001/api/users/profile", requestOptions)
+      // fetch("http://localhost:5001/api/users/profile", requestOptions)
+      fetch(`${serverURL}/api/users/profile`, requestOptions)
         .then((response) => response.json())
         .then((result) => {
           console.log(result);

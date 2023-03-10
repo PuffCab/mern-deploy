@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getToken } from "../utils/getToken";
+import { serverURL } from "../utils/serverURL";
 
 function Login() {
   const [loginUser, setLoginUser] = useState({});
@@ -24,7 +25,8 @@ function Login() {
       redirect: "follow",
     };
 
-    fetch("http://localhost:5001/api/users/login", requestOptions)
+    // fetch("http://localhost:5001/api/users/login", requestOptions)
+    fetch(`${serverURL}/api/users/login`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);

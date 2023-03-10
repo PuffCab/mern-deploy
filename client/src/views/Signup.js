@@ -50,7 +50,8 @@ function Signup() {
       body: formdata,
     };
 
-    fetch("http://localhost:5001/api/users/imageUpload", requestOptions)
+    // fetch("http://localhost:5001/api/users/imageUpload", requestOptions)
+    fetch(`${serverURL}/api/users/imageUpload`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log("result", result);
@@ -90,7 +91,8 @@ function Signup() {
       body: urlencoded,
     };
 
-    fetch("http://localhost:5001/api/users/signup", requestOptions)
+    // fetch("http://localhost:5001/api/users/signup", requestOptions)
+    fetch(`${serverURL}/api/users/signup`, requestOptions)
       .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
